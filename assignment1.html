@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fictional Restaurant</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: #e8491d;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .menu-item {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            flex: 1 1 30%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item h3 {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: #ffffff;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .menu-item {
+                flex: 1 1 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+            .menu-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to The Gourmet Kitchen</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <section id="about">
+        <h2>About Us</h2>
+        <p>The Gourmet Kitchen offers a delightful dining experience with a menu that celebrates the best of local and seasonal ingredients. Join us for a meal that will tantalize your taste buds!</p>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <h3>Grilled Salmon</h3>
+                <p>Fresh salmon grilled to perfection, served with a side of seasonal vegetables.</p>
+                <p><strong>Price: $25</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>Caesar Salad</h3>
+                <p>Crisp romaine lettuce, parmesan cheese, croutons, and Caesar dressing.</p>
+                <p><strong>Price: $12</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Rich chocolate cake with a gooey molten center, served with vanilla ice cream.</p>
+                <p><strong>Price: $8</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>Pasta Primavera</h3>
+                <p>Pasta tossed with fresh vegetables in a light garlic sauce.</p>
+                <p><strong>Price: $15</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>Margherita Pizza</h3>
+                <p>Classic pizza topped with fresh mozzarella, tomatoes, and basil.</p>
+                <p><strong>Price: $18</strong></p>
+            </div>
+            <div class="menu-item">
+                <h3>New York Cheesecake</h3>
+                <p>Creamy cheesecake with a graham cracker crust, served with berry sauce.</p>
+                <p><strong>Price: $10</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For reservations, please call us at (123) 456-7890 or email us at info@gourmetkitchen.com.</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 The Gourmet Kitchen. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
