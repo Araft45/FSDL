@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arfat's Portfolio</title>
+  <title>Rudradevs' Portfolio</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -12,25 +12,15 @@
       font-family: 'Arial', sans-serif;
       line-height: 1.6;
       color: #333;
-      background-color: #f4f4f4;
     }
     
     .navbar {
       box-shadow: 0 2px 4px rgba(0,0,0,.1);
-      background-color: #343a40;
     }
     
     .navbar-brand {
       font-weight: bold;
-      color: #ff5722 !important;
-    }
-    
-    .navbar-nav .nav-link {
-      color: #fff !important;
-    }
-    
-    .navbar-nav .nav-link:hover {
-      color: #ff5722 !important;
+      color: #007bff !important;
     }
     
     .container {
@@ -38,9 +28,9 @@
     }
     
     h2 {
-      color: #ff5722;
+      color: #007bff;
       margin-bottom: 20px;
-      border-bottom: 2px solid #ff5722;
+      border-bottom: 2px solid #007bff;
       padding-bottom: 10px;
     }
     
@@ -65,28 +55,22 @@
     }
     
     #skills li {
-      background-color: #fff;
+      background-color: #f8f9fa;
       margin-bottom: 10px;
       padding: 10px;
       border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,.1);
     }
     
     #contact form {
-      background-color: #fff;
+      background-color: #f8f9fa;
       padding: 20px;
       border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,.1);
     }
     
     footer {
-      background-color: #343a40;
+      background-color: #007bff;
       color: white;
       padding: 20px 0;
-    }
-    
-    footer p {
-      margin: 0;
     }
     
     @media (max-width: 768px) {
@@ -106,9 +90,9 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Arfat's Portfolio</a>
+      <a class="navbar-brand" href="#">Rudradevs' Portfolio</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -127,9 +111,15 @@
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+        </form>
       </div>
     </div>
   </nav>
+
+  <!-- Search Results -->
+  <div class="container my-4" id="searchResults"></div>
 
   <!-- Bio Section -->
   <div class="container" id="bio">
@@ -141,9 +131,9 @@
   <div class="container" id="skills">
     <h2>My Skills</h2>
     <ul>
-      <li>Cloud Security</li>
-      <li>SysOps</li>
-      <li>DevOps</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
       <!-- Add more skills here -->
     </ul>
   </div>
@@ -152,16 +142,18 @@
   <div class="container" id="projects">
     <h2>My Projects</h2>
     <div class="row">
+      <!-- Project Card 1 -->
       <div class="col-md-4">
         <div class="card">
           <img class="card-img-top" src="lambda.jpg" alt="Project 1">
           <div class="card-body">
             <h5 class="card-title">Lambda Mailer</h5>
-            <p class="card-text">Bulk mail sending application deployed on AWS Beanstalk</p>
+            <p class="card-text">Bulk mail sending application deployed on AWS beanstalk</p>
             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#project1Modal">Learn More</a>
           </div>
         </div>
       </div>
+      <!-- Add more project cards here -->
     </div>
   </div>
 
@@ -210,7 +202,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p>© 2023 Copyright: Arfat</p>
+          <p>© 2023 Copyright: Rudradev</p>
         </div>
       </div>
     </div>
@@ -219,12 +211,14 @@
   <!-- Custom JavaScript for Search Engine -->
   <script>
     $(document).ready(function() {
+      // Search functionality
       $('#searchInput').on('keyup', function() {
         var searchQuery = $(this).val();
         performSearch(searchQuery);
       });
 
       function performSearch(query) {
+        // AJAX request to fetch search results from API
         $.ajax({
           url: 'https://api.example.com/search',
           data: { query: query },
@@ -238,7 +232,10 @@
       }
 
       function displaySearchResults(results) {
+        // Clear previous search results
         $('#searchResults').empty();
+
+        // Display search suggestions
         var suggestions = results.suggestions;
         if (suggestions.length > 0) {
           $('#searchResults').append('<h4>Suggestions</h4>');
@@ -247,6 +244,7 @@
           });
         }
 
+        // Display search results
         var items = results.items;
         if (items.length > 0) {
           $('#searchResults').append('<h4>Results</h4>');
