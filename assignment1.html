@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Dine</title>
+    <style>  
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Mobile-First Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .banner {
+            background-image: url('images/banner.jpg'); /* Use your own banner image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        section {
+            padding: 2rem 1rem;
+        }
+
+        #about, #menu, #contact {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        /* Menu Category Styling */
+        .menu-category {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 200px; /* Square size */
+            width: 200px; /* Square size */
+            margin: 1rem auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Dark Overlay for Better Text Visibility */
+        .menu-category::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        /* Text Styling */
+        .menu-category h3,
+        .menu-category p {
+            position: relative;
+            z-index: 2; /* Ensures text is above the overlay */
+        }
+
+        .menu-category h3 {
+            align-self: flex-start;
+            font-size: 1.5rem;
+        }
+
+        .menu-category p {
+            align-self: flex-end;
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input, textarea, button {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Media Queries for Larger Screens */
+        @media (min-width: 768px) {
+            header nav ul {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .banner {
+                padding: 5rem 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .banner {
+                padding: 6rem 1rem;
+            }
+
+            #menu {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .menu-category {
+                height: 250px; /* Adjust square size for larger screens */
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Delicious Dine</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="banner">
+        <h2>Welcome to Delicious Dine!</h2>
+        <p>Your ultimate destination for flavorful experiences.</p>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-category" style="background-image: url('images/appetizers.jpg');">
+            <h3>Appetizers</h3>
+            <p>Explore our range of delicious starters.</p>
+        </div>
+        <div class="menu-category" style="background-image: url('images/main_course.jpg');">
+            <h3>Main Course</h3>
+            <p>Indulge in our savory main dishes.</p>
+        </div>
+        <div class="menu-category" style="background-image: url('images/desserts.jpg');">
+            <h3>Desserts</h3>
+            <p>Sweeten your meal with our delightful desserts.</p>
+        </div>
+        <div class="menu-category" style="background-image: url('images/beverages.jpg');">
+            <h3>Beverages</h3>
+            <p>Refresh yourself with our selection of drinks.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Delicious Dine, we serve authentic flavors from around the world with fresh ingredients and expert chefs. Our mission is to offer a dining experience that combines culinary tradition with innovation, creating an unforgettable experience for every guest.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Delicious Dine. All rights reserved.</p>
+    </footer>
+</body>
+</html>
