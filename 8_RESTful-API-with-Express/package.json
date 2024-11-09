@@ -1,0 +1,15 @@
+{
+  "name": "5_expressjs",
+  "version": "1.0.0",
+  "description": "1. Initialize a new Node.js project:\r    ```npm init -y```\r 2. Install required packages:\r     ```npm install express``\r 3. Run the development server:\r ```node app.js```",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
